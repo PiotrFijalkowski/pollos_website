@@ -160,7 +160,7 @@ export const MainImageWrapper = styled.div`
   right: 0;
   width: 80%;
   height: 80%;
-  z-index: 2;
+  z-index: 20; /* Increased z-index to be above BottomBar (10) */
   
   /* Blue background rectangle behind image */
   &::before {
@@ -197,17 +197,21 @@ export const BottomBarContainer = styled.div`
   background-color: white;
   padding: 40px 24px;
   position: relative;
-  z-index: 10;
+  z-index: 10; /* Bar z-index */
   
   @media (min-width: 1024px) {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px; /* Container width */
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 `;
 
 export const BottomBarContent = styled.div`
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -220,6 +224,8 @@ export const BottomBarContent = styled.div`
     justify-content: space-between;
   }
 `;
+
+
 
 export const CapabilitiesColumn = styled.div`
   display: flex;
