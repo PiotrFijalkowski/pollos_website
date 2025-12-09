@@ -54,6 +54,49 @@ const Contact = () => {
   return (
     <Section id="contact">
       <Container>
+        <FormColumn>
+          <Form onSubmit={handleSubmit}>
+            <FormGroup>
+              <InputLabel>Imię i Nazwisko</InputLabel>
+              <Input
+                type="text"
+                name="name"
+                placeholder="Jan Kowalski"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <InputLabel>Email</InputLabel>
+              <Input
+                type="email"
+                name="email"
+                placeholder="jan@firma.pl"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <InputLabel>Wiadomość</InputLabel>
+              <TextArea
+                name="message"
+                placeholder="Opisz swój projekt..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
+            </FormGroup>
+
+            <SubmitButton type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+            </SubmitButton>
+          </Form>
+        </FormColumn>
+
         <InfoColumn>
           <Header>
             <Label>KONTAKT</Label>
@@ -103,49 +146,6 @@ const Contact = () => {
             </ContactItem>
           </ContactDetails>
         </InfoColumn>
-
-        <FormColumn>
-          <Form onSubmit={handleSubmit}>
-            <FormGroup>
-              <InputLabel>Imię i Nazwisko</InputLabel>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Jan Kowalski"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <InputLabel>Email</InputLabel>
-              <Input
-                type="email"
-                name="email"
-                placeholder="jan@firma.pl"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </FormGroup>
-
-            <FormGroup>
-              <InputLabel>Wiadomość</InputLabel>
-              <TextArea
-                name="message"
-                placeholder="Opisz swój projekt..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-            </FormGroup>
-
-            <SubmitButton type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
-            </SubmitButton>
-          </Form>
-        </FormColumn>
       </Container>
     </Section>
   );

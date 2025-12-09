@@ -45,7 +45,7 @@ export const HeroContainer = styled.section`
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1440px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -206,7 +206,7 @@ export const BottomBarContainer = styled.div`
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1200px; /* Container width */
+    max-width: 1440px; /* Container width */
     width: 100%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;

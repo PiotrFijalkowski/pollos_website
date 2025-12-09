@@ -36,7 +36,7 @@ export const ServicesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  max-width: 1200px; /* Consistent with Why Us */
+  max-width: 1440px; /* Consistent with Why Us */
   width: 100%;
   position: relative;
   z-index: 1;

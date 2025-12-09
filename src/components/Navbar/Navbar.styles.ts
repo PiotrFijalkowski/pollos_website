@@ -19,7 +19,7 @@ export const NavContainer = styled.nav<{ $scrolled: boolean }>`
 
 export const NavContent = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 0 24px;
   display: flex;
   align-items: center;

@@ -32,7 +32,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
