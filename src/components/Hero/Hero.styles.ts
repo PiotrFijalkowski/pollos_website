@@ -52,7 +52,7 @@ export const ContentWrapper = styled.div`
   gap: 60px;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 20; /* Increased to be above BottomBar (10) */
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
@@ -224,7 +224,7 @@ export const BottomBarContainer = styled.div`
   background-color: white;
   padding: 40px 24px;
   position: relative;
-  z-index: 10; /* Bar z-index */
+  z-index: 10; /* Lower than ContentWrapper (20) */
   
   @media (min-width: 1024px) {
     position: absolute;
