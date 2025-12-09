@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Section,
   Container,
@@ -76,39 +77,45 @@ const Process = () => {
               T900,150 -> Smooth curve to third point
               T1200,0 -> Smooth curve to end
             */}
-            <path
+            <motion.path
               d="M0,600 Q150,600 300,450 T600,300 T900,150 T1200,0"
               strokeWidth="2"
               fill="none"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeInOut" }}
             />
 
             {/* Dots rendered inside SVG for perfect alignment */}
             {steps.map((step, index) => (
               <g key={`svg-dot-${index}`}>
                 {/* Outer Ring */}
-                <circle
+                <motion.circle
                   cx={step.cx}
                   cy={step.cy}
                   r="12"
                   fill="#141414"
                   stroke={step.color}
                   strokeWidth="4"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + index * 0.3, duration: 0.5 }}
                 />
                 {/* Inner Dot */}
-                <circle
+                <motion.circle
                   cx={step.cx}
                   cy={step.cy}
                   r="4"
                   fill="white"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7 + index * 0.3, duration: 0.3 }}
                 />
               </g>
             ))}
-
-            {/* End Dot (Optional, based on user feedback "kropek jest 4" - maybe they didn't want the 4th one? 
-                User said "kropek jest 4 i tylko jedna jest na lini". 
-                I will remove the 4th dot to be safe and stick to the 3 steps. 
-                If they want an end marker, I can add it, but 3 steps = 3 dots usually looks cleaner.
-            */}
           </WavyLineSVG>
 
           {steps.map((step, index) => (
@@ -117,6 +124,11 @@ const Process = () => {
               $top={step.top}
               $left={step.left}
               $align={step.align as 'left' | 'center' | 'right'}
+              as={motion.div}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.3 }}
             >
               <StepNumber>{step.number}</StepNumber>
               <StepTitle>{step.title}</StepTitle>

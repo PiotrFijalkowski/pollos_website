@@ -3,16 +3,7 @@
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 
-const fadeInUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+
 
 export const HeroContainer = styled.section`
   min-height: 60vh;
@@ -83,7 +74,7 @@ export const Label = styled.span`
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: ${fadeInUp} 0.6s ease-out forwards;
+
 `;
 
 export const Headline = styled.h1`
@@ -92,8 +83,7 @@ export const Headline = styled.h1`
   line-height: 1;
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
-  animation: ${fadeInUp} 0.6s ease-out 0.1s forwards;
-  opacity: 0;
+
 
   @media (min-width: 768px) {
     font-size: 5rem;
@@ -110,8 +100,7 @@ export const Subheadline = styled.p`
   line-height: 1.6;
   margin: 0;
   max-width: 500px;
-  animation: ${fadeInUp} 0.6s ease-out 0.2s forwards;
-  opacity: 0;
+
 `;
 
 export const CTAButton = styled(Link)`
@@ -126,8 +115,7 @@ export const CTAButton = styled(Link)`
   gap: 8px;
   transition: transform 0.2s ease, background-color 0.2s ease;
   margin-top: 16px;
-  animation: ${fadeInUp} 0.6s ease-out 0.3s forwards;
-  opacity: 0;
+
 
   &:hover {
     transform: translateY(-2px);
@@ -146,8 +134,7 @@ export const RightColumn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ${fadeInUp} 0.8s ease-out 0.4s forwards;
-  opacity: 0;
+
 
   @media (min-width: 768px) {
     height: 500px;
@@ -195,13 +182,6 @@ export const FloatingElement = styled.div<{ $top?: string; $left?: string; $righ
   bottom: ${({ $bottom }) => $bottom || 'auto'};
   z-index: 3;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-  animation: float 6s ease-in-out infinite;
-
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-  }
 `;
 
 export const BottomBarContainer = styled.div`

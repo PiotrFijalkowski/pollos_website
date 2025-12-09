@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import {
   HeroContainer,
   ContentWrapper,
@@ -33,15 +34,40 @@ const Hero = () => {
     <HeroContainer>
       <ContentWrapper>
         <LeftColumn>
-          <Label>DIGITAL</Label>
-          <Headline>
+          <Label
+            as={motion.span}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            DIGITAL
+          </Label>
+          <Headline
+            as={motion.h1}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             Marketing<br />Agency
           </Headline>
-          <Subheadline>
+          <Subheadline
+            as={motion.p}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Tworzymy cyfrowe doświadczenia, które pomagają markom rosnąć.
             Strategia, kreatywność i technologia w jednym miejscu.
           </Subheadline>
-          <CTAButton href="/contact">
+          <CTAButton
+            href="/contact"
+            as={motion.a}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Get a Demo
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -49,7 +75,12 @@ const Hero = () => {
           </CTAButton>
         </LeftColumn>
 
-        <RightColumn>
+        <RightColumn
+          as={motion.div}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <CollageWrapper>
             <MainImageWrapper>
               {/* Using why.svg as placeholder since generation failed */}
@@ -64,14 +95,26 @@ const Hero = () => {
             </MainImageWrapper>
 
             {/* Floating Social Icons / Elements */}
-            <FloatingElement $top="20%" $left="0%">
+            <FloatingElement
+              $top="20%"
+              $left="0%"
+              as={motion.div}
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
               {/* Placeholder for Instagram/Social Icon */}
               <div style={{ width: 60, height: 60, background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </div>
             </FloatingElement>
 
-            <FloatingElement $bottom="40%" $right="-5%">
+            <FloatingElement
+              $bottom="40%"
+              $right="-5%"
+              as={motion.div}
+              animate={{ y: [10, -10, 10] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            >
               {/* 3D Cube or similar shape */}
               <div style={{ width: 50, height: 50, background: '#333', transform: 'rotate(45deg)', boxShadow: '0 10px 20px rgba(0,0,0,0.5)' }}></div>
             </FloatingElement>
