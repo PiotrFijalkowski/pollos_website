@@ -62,8 +62,7 @@ const Process = () => {
     <Section id="process">
       <Container>
         <HeaderGroup>
-          <Subtitle>SERVICES</Subtitle>
-          <SectionTitle>Expand Social<br />Reach</SectionTitle>
+          <SectionTitle>Jak Wygląda <br />Współpraca?</SectionTitle>
         </HeaderGroup>
 
         <StepsWrapper>

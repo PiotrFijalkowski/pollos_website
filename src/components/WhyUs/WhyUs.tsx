@@ -76,7 +76,6 @@ const WhyUs = () => {
     <Section id="why-us">
       <Container>
         <HeaderGroup>
-          <Subtitle>WHY CHOOSE US</Subtitle>
           <Title>Dlaczego Pollos?</Title>
         </HeaderGroup>
 
