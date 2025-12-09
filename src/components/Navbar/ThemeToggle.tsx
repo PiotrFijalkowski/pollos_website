@@ -4,16 +4,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '@/context/ThemeContext';
 
-const ToggleButton = styled.button`
+const ToggleButton = styled.button<{ $forcedColor?: string }>`
   background: transparent;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ theme, $forcedColor }) => $forcedColor || theme.colors.border};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
   border-radius: 50%;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme, $forcedColor }) => $forcedColor || theme.colors.text};
   transition: all 0.3s ease;
 
   &:hover {
@@ -40,11 +40,11 @@ const MoonIcon = () => (
   </svg>
 );
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ color }: { color?: string }) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <ToggleButton onClick={toggleTheme} aria-label="Toggle theme">
+    <ToggleButton onClick={toggleTheme} aria-label="Toggle theme" $forcedColor={color}>
       {theme === 'light' ? <MoonIcon /> : <SunIcon />}
     </ToggleButton>
   );

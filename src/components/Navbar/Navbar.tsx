@@ -3,6 +3,7 @@
 import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
+import { useTheme } from 'styled-components';
 import {
   NavContainer,
   NavContent,
@@ -20,6 +21,7 @@ import ThemeToggle from './ThemeToggle';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +61,7 @@ const Navbar = () => {
               <NavLink href="/about">O Nas</NavLink>
               <NavLink href="/contact">Kontakt</NavLink>
             </DesktopMenu>
-            <ThemeToggle />
+            <ThemeToggle color="white" />
             <CTAButton href="/contact">Darmowa Wycena</CTAButton>
           </RightSection>
 
@@ -76,6 +78,7 @@ const Navbar = () => {
           onClick={toggleMenu}
           style={{ position: 'absolute', top: '28px', right: '24px' }}
           aria-label="Close Menu"
+          $color={theme?.colors?.text}
         >
           <div style={{ transform: 'rotate(45deg)' }} />
           <div style={{ opacity: 0 }} />
@@ -85,6 +88,11 @@ const Navbar = () => {
         <MobileNavLink href="/" onClick={toggleMenu}>Strona Główna</MobileNavLink>
         <MobileNavLink href="/about" onClick={toggleMenu}>O Nas</MobileNavLink>
         <MobileNavLink href="/contact" onClick={toggleMenu}>Kontakt</MobileNavLink>
+
+        <div style={{ margin: '20px 0' }}>
+          <ThemeToggle />
+        </div>
+
         <CTAButton href="/contact" onClick={toggleMenu}>Darmowa Wycena</CTAButton>
       </MobileMenuOverlay>
     </>

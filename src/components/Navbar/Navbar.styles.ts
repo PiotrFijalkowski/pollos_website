@@ -85,7 +85,7 @@ export const CTAButton = styled(Link)`
   }
 `;
 
-export const HamburgerButton = styled.button`
+export const HamburgerButton = styled.button<{ $color?: string }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -100,7 +100,7 @@ export const HamburgerButton = styled.button`
   div {
     width: 30px;
     height: 3px;
-    background: white; /* Always white on dark navbar */
+    background: ${({ $color }) => $color || 'white'}; /* Custom color or white default */
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
