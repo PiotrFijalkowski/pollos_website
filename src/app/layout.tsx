@@ -24,6 +24,8 @@ import GlobalStyles from "@/styles/GlobalStyles";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
+import { ReactLenis } from '@studio-freight/react-lenis';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,16 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StyledComponentsRegistry>
-          <ThemeContextProvider>
-            <GlobalStyles />
-            <Navbar />
-            {children}
-            <Footer />
-          </ThemeContextProvider>
-        </StyledComponentsRegistry>
-      </body>
+      <ReactLenis root>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <StyledComponentsRegistry>
+            <ThemeContextProvider>
+              <GlobalStyles />
+              <Navbar />
+              {children}
+              <Footer />
+            </ThemeContextProvider>
+          </StyledComponentsRegistry>
+        </body>
+      </ReactLenis>
     </html>
   );
 }
