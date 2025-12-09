@@ -8,7 +8,7 @@ const fadeIn = keyframes`
 `;
 
 export const Section = styled.section`
-  background-color: #141414;
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 100px 24px;
   position: relative;
   overflow: hidden;
@@ -22,8 +22,8 @@ export const Section = styled.section`
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(${({ theme }) => theme.colors.grid} 1px, transparent 1px),
+      linear-gradient(90deg, ${({ theme }) => theme.colors.grid} 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.5;
     pointer-events: none;
@@ -57,7 +57,7 @@ export const Header = styled.div`
 `;
 
 export const Label = styled.span`
-  color: #888;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -69,7 +69,7 @@ export const Label = styled.span`
 export const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
   margin-bottom: 24px;
 
@@ -79,7 +79,7 @@ export const Title = styled.h2`
 `;
 
 export const Description = styled.p`
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
@@ -103,11 +103,11 @@ export const IconWrapper = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: ${({ theme }) => theme.colors.grid};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFD700; /* Yellow accent */
+  color: ${({ theme }) => theme.colors.accent}; /* Yellow accent */
   flex-shrink: 0;
 
   svg {
@@ -124,27 +124,27 @@ export const ContactText = styled.div`
 
 export const ContactLabel = styled.span`
   font-size: 0.9rem;
-  color: #666;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-weight: 600;
 `;
 
 export const ContactValue = styled.a`
   font-size: 1.1rem;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #FFD700;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 export const FormColumn = styled.div`
-  background-color: #1a1a1a;
+  background-color: ${({ theme }) => theme.colors.background};
   padding: 40px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid ${({ theme }) => theme.colors.border};
   animation: ${fadeIn} 0.6s ease-out 0.2s forwards;
   opacity: 0;
 `;
@@ -163,36 +163,36 @@ export const FormGroup = styled.div`
 
 export const InputLabel = styled.label`
   font-size: 0.9rem;
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-weight: 500;
 `;
 
 export const Input = styled.input`
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: 12px 0;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
   transition: border-color 0.2s ease;
   width: 100%;
 
   &:focus {
     outline: none;
-    border-bottom-color: #FFD700;
+    border-bottom-color: ${({ theme }) => theme.colors.accent};
   }
 
   &::placeholder {
-    color: #444;
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
 
 export const TextArea = styled.textarea`
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: 12px 0;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
   transition: border-color 0.2s ease;
   width: 100%;
@@ -201,17 +201,17 @@ export const TextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-bottom-color: #FFD700;
+    border-bottom-color: ${({ theme }) => theme.colors.accent};
   }
 
   &::placeholder {
-    color: #444;
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
 
 export const SubmitButton = styled.button`
-  background-color: #FFD700;
-  color: black;
+  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.background === '#ffffff' ? '#1a1a1a' : '#000000'};
   border: none;
   padding: 16px 32px;
   font-size: 1rem;
@@ -223,7 +223,7 @@ export const SubmitButton = styled.button`
   align-self: flex-start;
 
   &:hover {
-    background-color: #F4C430;
+    filter: brightness(1.1);
     transform: translateY(-2px);
   }
 

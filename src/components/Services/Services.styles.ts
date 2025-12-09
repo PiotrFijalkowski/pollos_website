@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const ServicesSection = styled.section`
   padding: 100px 24px;
-  background-color: #141414; /* Dark background */
+  background-color: ${({ theme }) => theme.colors.surface};
   position: relative;
   overflow: hidden;
   display: flex;
@@ -13,15 +13,15 @@ export const ServicesSection = styled.section`
 
   /* Grid Background Effect */
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(${({ theme }) => theme.colors.grid} 1px, transparent 1px),
+    linear-gradient(90deg, ${({ theme }) => theme.colors.grid} 1px, transparent 1px);
   background-size: 50px 50px;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 800;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 60px;
   text-align: center;
   position: relative;
@@ -53,14 +53,14 @@ export const ServicesGrid = styled.div`
 export const IconWrapper = styled.div<{ $color: string }>`
   width: 60px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: ${({ theme }) => theme.colors.grid};
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
   transition: all 0.3s ease;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
 
   svg {
     width: 32px;
@@ -69,8 +69,8 @@ export const IconWrapper = styled.div<{ $color: string }>`
 `;
 
 export const ServiceCard = styled.div<{ $color: string }>`
-  background-color: #1a1a1a;
-  border: 1px solid #333;
+  background-color: ${({ theme }) => theme.colors.background};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
@@ -94,13 +94,13 @@ export const ServiceCard = styled.div<{ $color: string }>`
 export const CardTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin-bottom: 16px;
 `;
 
 export const CardDescription = styled.p`
   font-size: 0.95rem;
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.6;
   margin: 0;
 `;

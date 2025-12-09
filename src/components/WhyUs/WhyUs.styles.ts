@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 100px 24px;
-  background-color: #0a0a0a; /* Slightly darker than Services (#141414) */
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator line */
+  background-color: ${({ theme }) => theme.colors.background};
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
   position: relative;
   overflow: hidden;
   display: flex;
@@ -13,8 +13,8 @@ export const Section = styled.section`
 
   /* Grid Background Effect */
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(${({ theme }) => theme.colors.grid} 1px, transparent 1px),
+    linear-gradient(90deg, ${({ theme }) => theme.colors.grid} 1px, transparent 1px);
   background-size: 50px 50px;
 `;
 
@@ -48,7 +48,7 @@ export const Subtitle = styled.span`
 export const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 800;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
   line-height: 1.2;
 
@@ -107,13 +107,13 @@ export const BenefitContent = styled.div`
 export const BenefitTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
 `;
 
 export const BenefitDescription = styled.p`
   font-size: 1rem;
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.6;
   margin: 0;
 `;

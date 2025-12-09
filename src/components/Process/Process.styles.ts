@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 100px 24px;
-  background-color: #141414;
+  background-color: ${({ theme }) => theme.colors.surface};
   position: relative;
   overflow: hidden;
   display: flex;
@@ -69,7 +69,7 @@ export const Subtitle = styled.span`
 export const SectionTitle = styled.h2`
   font-size: 3rem;
   font-weight: 800;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
   line-height: 1.1;
   
@@ -105,6 +105,12 @@ export const WavyLineSVG = styled.svg`
   z-index: 0;
   overflow: visible;
 
+  path {
+    stroke: ${({ theme }) => theme.colors.text};
+    opacity: 0.2;
+    transition: stroke 0.3s ease;
+  }
+
   @media (min-width: 1024px) {
     display: block;
   }
@@ -133,7 +139,7 @@ export const StepCard = styled.div<{ $top?: string; $left?: string; $align?: 'le
 export const StepNumber = styled.div`
   font-size: 8rem;
   font-weight: 900;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   line-height: 0.8;
   margin-bottom: 16px;
   font-family: 'Arial Black', sans-serif;
@@ -142,13 +148,13 @@ export const StepNumber = styled.div`
 export const StepTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
 `;
 
 export const StepDescription = styled.p`
   font-size: 1rem;
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.5;
   margin: 0;
   max-width: 280px;
@@ -158,7 +164,7 @@ export const StepLink = styled.a<{ $color: string }>`
   margin-top: 16px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   display: flex;
   align-items: center;

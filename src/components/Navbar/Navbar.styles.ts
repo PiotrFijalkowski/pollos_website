@@ -9,12 +9,14 @@ export const NavContainer = styled.nav<{ $scrolled: boolean }>`
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: ${({ $scrolled }) => ($scrolled ? '#193454' : 'transparent')};
+  background-color: #0a0a0a; /* Always dark background */
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: ${({ $scrolled }) => ($scrolled ? '0 2px 10px rgba(0,0,0,0.5)' : 'none')};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 `;
 
 export const NavContent = styled.div`
@@ -29,7 +31,7 @@ export const NavContent = styled.div`
 export const RightSection = styled.div`
   display: none;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 
   @media (min-width: 768px) {
     display: flex;
@@ -40,7 +42,7 @@ export const LogoContainer = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: white; /* Always white on dark navbar */
   font-weight: bold;
   font-size: 1.5rem;
   
@@ -57,7 +59,7 @@ export const DesktopMenu = styled.div`
 `;
 
 export const NavLink = styled(Link)`
-  color: white;
+  color: white; /* Always white on dark navbar */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -65,12 +67,13 @@ export const NavLink = styled(Link)`
 
   &:hover {
     opacity: 0.8;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 export const CTAButton = styled(Link)`
-  background-color: white;
-  color: #193454;
+  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.background === '#ffffff' ? '#1a1a1a' : '#000000'}; /* Always dark text on yellow button */
   padding: 10px 24px;
   border-radius: 4px;
   text-decoration: none;
@@ -97,7 +100,7 @@ export const HamburgerButton = styled.button`
   div {
     width: 30px;
     height: 3px;
-    background: white;
+    background: white; /* Always white on dark navbar */
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -115,7 +118,7 @@ export const MobileMenuOverlay = styled.div<{ $isOpen: boolean }>`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #193454;
+  background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,12 +130,13 @@ export const MobileMenuOverlay = styled.div<{ $isOpen: boolean }>`
 `;
 
 export const MobileNavLink = styled(Link)`
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
   
   &:hover {
     opacity: 0.8;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;

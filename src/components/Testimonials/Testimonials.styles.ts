@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 100px 24px;
-  background-color: #0a0a0a; /* Slightly darker/lighter than adjacent sections */
+  background-color: ${({ theme }) => theme.colors.background}; /* Slightly darker/lighter than adjacent sections */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -28,7 +28,7 @@ export const Header = styled.div`
 `;
 
 export const Label = styled.span`
-  color: #FFD700;
+  color: ${({ theme }) => theme.colors.accent};
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -40,7 +40,7 @@ export const Label = styled.span`
 export const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 800;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
   line-height: 1.2;
 
@@ -65,8 +65,8 @@ export const Grid = styled.div`
 `;
 
 export const Card = styled.div`
-  background-color: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: ${({ theme }) => theme.colors.surface};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 16px;
   padding: 40px;
   display: flex;
@@ -76,14 +76,14 @@ export const Card = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 215, 0, 0.3);
+    border-color: ${({ theme }) => theme.colors.accent}4D;
   }
 `;
 
 export const Stars = styled.div`
   display: flex;
   gap: 4px;
-  color: #FFD700;
+  color: ${({ theme }) => theme.colors.accent};
   
   svg {
     width: 20px;
@@ -94,7 +94,7 @@ export const Stars = styled.div`
 
 export const Quote = styled.p`
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: ${({ theme }) => theme.colors.text};
   line-height: 1.6;
   font-style: italic;
   margin: 0;
@@ -107,14 +107,14 @@ export const Author = styled.div`
   gap: 16px;
   margin-top: auto;
   padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 export const Avatar = styled.div`
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #333;
+  background-color: ${({ theme }) => theme.colors.border};
   overflow: hidden;
   flex-shrink: 0;
   
@@ -132,12 +132,12 @@ export const AuthorInfo = styled.div`
 `;
 
 export const AuthorName = styled.span`
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 700;
   font-size: 1rem;
 `;
 
 export const AuthorRole = styled.span`
-  color: #888;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 0.85rem;
 `;

@@ -79,7 +79,6 @@ const Process = () => {
             */}
             <path
               d="M0,600 Q150,600 300,450 T600,300 T900,150 T1200,0"
-              stroke="rgba(255, 255, 255, 0.2)"
               strokeWidth="2"
               fill="none"
             />

@@ -20,7 +20,7 @@ export const HeroContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #141414; /* Dark background */
+  background-color: ${({ theme }) => theme.colors.background};
   position: relative;
   overflow: hidden;
   padding: 0px 24px 60px; /* Added top padding for fixed navbar */
@@ -34,8 +34,8 @@ export const HeroContainer = styled.section`
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(${({ theme }) => theme.colors.grid} 1px, transparent 1px),
+      linear-gradient(90deg, ${({ theme }) => theme.colors.grid} 1px, transparent 1px);
     background-size: 100px 100px;
     transform: perspective(500px) rotateX(20deg) scale(1.5);
     transform-origin: top center;
@@ -72,7 +72,7 @@ export const LeftColumn = styled.div`
 `;
 
 export const Label = styled.span`
-  color: #888;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -84,7 +84,7 @@ export const Headline = styled.h1`
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
   animation: ${fadeInUp} 0.6s ease-out 0.1s forwards;
   opacity: 0;
@@ -100,7 +100,7 @@ export const Headline = styled.h1`
 
 export const Subheadline = styled.p`
   font-size: 1.125rem;
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.6;
   margin: 0;
   max-width: 500px;
@@ -109,8 +109,8 @@ export const Subheadline = styled.p`
 `;
 
 export const CTAButton = styled(Link)`
-  background-color: #FFD700; /* Yellow */
-  color: #000;
+  background-color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.background === '#ffffff' ? '#1a1a1a' : '#000000'};
   padding: 16px 32px;
   font-weight: 700;
   font-size: 1rem;
@@ -124,8 +124,8 @@ export const CTAButton = styled(Link)`
   opacity: 0;
 
   &:hover {
-    background-color: #F4C430;
     transform: translateY(-2px);
+    filter: brightness(1.1);
   }
 
   svg {
@@ -196,7 +196,7 @@ export const FloatingElement = styled.div<{ $top?: string; $left?: string; $righ
 
 export const BottomBarContainer = styled.div`
   width: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 40px 24px;
   position: relative;
   z-index: 10; /* Lower than ContentWrapper (20) */
@@ -252,7 +252,7 @@ export const CapabilitiesIcon = styled.div`
 export const CapabilitiesTitle = styled.span`
   font-weight: 800;
   font-size: 0.9rem;
-  color: #666;
+  color: ${({ theme }) => theme.colors.textSecondary};
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
@@ -260,7 +260,7 @@ export const CapabilitiesTitle = styled.span`
 export const CapabilitiesText = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: #141414;
+  color: ${({ theme }) => theme.colors.text};
   line-height: 1.2;
   margin: 0;
 
@@ -302,11 +302,11 @@ export const FeatureIcon = styled.div`
 export const FeatureTitle = styled.span`
   font-weight: 700;
   font-size: 1rem;
-  color: #141414;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 export const FeatureDescription = styled.span`
   font-size: 0.9rem;
-  color: #666;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.4;
 `;

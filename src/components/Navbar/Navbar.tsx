@@ -15,6 +15,7 @@ import {
   MobileMenuOverlay,
   MobileNavLink,
 } from './Navbar.styles';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -58,6 +59,7 @@ const Navbar = () => {
               <NavLink href="/about">O Nas</NavLink>
               <NavLink href="/contact">Kontakt</NavLink>
             </DesktopMenu>
+            <ThemeToggle />
             <CTAButton href="/contact">Darmowa Wycena</CTAButton>
           </RightSection>
 

@@ -18,8 +18,11 @@ export const metadata: Metadata = {
 };
 
 import StyledComponentsRegistry from "@/lib/registry";
+import { ThemeContextProvider } from "@/context/ThemeContext";
+import GlobalStyles from "@/styles/GlobalStyles";
 
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -30,8 +33,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StyledComponentsRegistry>
-          <Navbar />
-          {children}
+          <ThemeContextProvider>
+            <GlobalStyles />
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeContextProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

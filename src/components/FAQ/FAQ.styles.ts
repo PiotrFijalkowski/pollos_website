@@ -8,11 +8,11 @@ const fadeIn = keyframes`
 `;
 
 export const Section = styled.section`
-  background-color: #0a0a0a; /* Slightly darker for separation */
+  background-color: ${({ theme }) => theme.colors.background}; /* Slightly darker for separation */
   padding: 100px 24px;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Visual separator */
+  border-top: 1px solid ${({ theme }) => theme.colors.border}; /* Visual separator */
 
   /* Grid Background Pattern */
   &::before {
@@ -23,8 +23,8 @@ export const Section = styled.section`
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(${({ theme }) => theme.colors.grid} 1px, transparent 1px),
+      linear-gradient(90deg, ${({ theme }) => theme.colors.grid} 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.5;
     pointer-events: none;
@@ -62,7 +62,7 @@ export const Header = styled.div`
 `;
 
 export const Description = styled.p`
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 1.1rem;
   line-height: 1.6;
   margin-top: 24px;
@@ -82,7 +82,7 @@ export const Label = styled.span`
 export const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   margin: 0;
 
   @media (min-width: 768px) {
@@ -91,7 +91,7 @@ export const Title = styled.h2`
 `;
 
 export const AccordionItem = styled.div`
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 16px;
   animation: ${fadeIn} 0.6s ease-out forwards;
   
@@ -110,11 +110,11 @@ export const QuestionButton = styled.button<{ $isOpen: boolean }>`
   align-items: center;
   cursor: pointer;
   text-align: left;
-  color: ${({ $isOpen }) => ($isOpen ? '#FFD700' : 'white')}; /* Yellow when open */
+  color: ${({ $isOpen, theme }) => ($isOpen ? theme.colors.accent : theme.colors.text)}; /* Yellow when open */
   transition: color 0.3s ease;
 
   &:hover {
-    color: #FFD700;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
@@ -162,7 +162,7 @@ export const AnswerWrapper = styled.div<{ $isOpen: boolean }>`
 `;
 
 export const AnswerText = styled.p`
-  color: #a0a0a0;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 1rem;
   line-height: 1.6;
   padding-bottom: 24px;
