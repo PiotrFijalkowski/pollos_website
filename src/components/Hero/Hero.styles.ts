@@ -3,7 +3,7 @@
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 
-const fadeIn = keyframes`
+const fadeInUp = keyframes`
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -15,128 +15,179 @@ const fadeIn = keyframes`
 `;
 
 export const HeroContainer = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0a192f; /* Deep dark blue */
-  background-image: radial-gradient(circle at 50% 50%, #112240 0%, #0a192f 100%);
+  background-color: #141414; /* Dark background */
   position: relative;
   overflow: hidden;
-  padding: 0 24px;
+  padding: 120px 24px 60px; /* Added top padding for fixed navbar */
+
+  /* Perspective Grid Background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+    transform: perspective(500px) rotateX(20deg) scale(1.5);
+    transform-origin: top center;
+    opacity: 0.3;
+    pointer-events: none;
+  }
 `;
 
-export const HeroContent = styled.div`
-  max-width: 1000px;
+export const ContentWrapper = styled.div`
+  max-width: 1200px;
   width: 100%;
-  text-align: center;
-  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 32px;
+  gap: 24px;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    text-align: left;
+    align-items: flex-start;
+  }
+`;
+
+export const Label = styled.span`
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: ${fadeInUp} 0.6s ease-out forwards;
 `;
 
 export const Headline = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1;
   color: white;
   margin: 0;
-  animation: ${fadeIn} 0.8s ease-out forwards;
+  animation: ${fadeInUp} 0.6s ease-out 0.1s forwards;
+  opacity: 0;
 
   @media (min-width: 768px) {
-    font-size: 4rem;
-  }
-
-  @media (min-width: 1024px) {
     font-size: 5rem;
   }
 
-  span {
-    background: linear-gradient(135deg, #64ffda 0%, #48bfe3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-    margin-top: 10px;
+  @media (min-width: 1024px) {
+    font-size: 6rem;
   }
 `;
 
 export const Subheadline = styled.p`
   font-size: 1.125rem;
-  color: #8892b0;
-  max-width: 600px;
+  color: #a0a0a0;
   line-height: 1.6;
   margin: 0;
-  animation: ${fadeIn} 0.8s ease-out 0.2s forwards;
+  max-width: 500px;
+  animation: ${fadeInUp} 0.6s ease-out 0.2s forwards;
   opacity: 0;
-
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-  }
 `;
 
-export const ButtonGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+export const CTAButton = styled(Link)`
+  background-color: #FFD700; /* Yellow */
+  color: #000;
+  padding: 16px 32px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
   margin-top: 16px;
-  animation: ${fadeIn} 0.8s ease-out 0.4s forwards;
+  animation: ${fadeInUp} 0.6s ease-out 0.3s forwards;
   opacity: 0;
+
+  &:hover {
+    background-color: #F4C430;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+export const RightColumn = styled.div`
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${fadeInUp} 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+
+  @media (min-width: 1024px) {
+    height: 600px;
+  }
+`;
+
+export const CollageWrapper = styled.div`
+  position: relative;
   width: 100%;
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-    justify-content: center;
-    width: auto;
-  }
+  height: 100%;
 `;
 
-export const PrimaryButton = styled(Link)`
-  background-color: #64ffda;
-  color: #0a192f;
-  padding: 16px 32px;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  text-align: center;
-
-  &:hover {
-    background-color: #48bfe3;
-    transform: translateY(-2px);
-  }
-`;
-
-export const SecondaryButton = styled(Link)`
-  background-color: transparent;
-  color: #64ffda;
-  padding: 16px 32px;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  border: 1px solid #64ffda;
-  transition: all 0.2s ease;
-  text-align: center;
-
-  &:hover {
-    background-color: rgba(100, 255, 218, 0.1);
-    transform: translateY(-2px);
-  }
-`;
-
-export const BackgroundShape = styled.div`
+export const MainImageWrapper = styled.div`
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 1;
+  top: 10%;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  z-index: 2;
+  
+  /* Blue background rectangle behind image */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    width: 100%;
+    height: 100%;
+    background-color: #00BFFF; /* Deep Sky Blue */
+    z-index: -1;
+  }
+`;
+
+export const FloatingElement = styled.div<{ $top?: string; $left?: string; $right?: string; $bottom?: string }>`
+  position: absolute;
+  top: ${({ $top }) => $top || 'auto'};
+  left: ${({ $left }) => $left || 'auto'};
+  right: ${({ $right }) => $right || 'auto'};
+  bottom: ${({ $bottom }) => $bottom || 'auto'};
+  z-index: 3;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  animation: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
 `;
