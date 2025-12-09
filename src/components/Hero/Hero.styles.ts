@@ -15,7 +15,7 @@ const fadeInUp = keyframes`
 `;
 
 export const HeroContainer = styled.section`
-  min-height: 100vh;
+  min-height: 60vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -23,7 +23,13 @@ export const HeroContainer = styled.section`
   background-color: ${({ theme }) => theme.colors.background};
   position: relative;
   overflow: hidden;
-  padding: 0px 24px 60px; /* Added top padding for fixed navbar */
+  padding: 150px 16px 40px; /* Reduced padding for mobile */
+  flex-direction: column; /* Stack content on mobile */
+
+  @media (min-width: 1024px) {
+    flex-direction: column; /* Restore row layout for desktop */
+    padding: 100px 16px 40px;
+  }
 
   /* Perspective Grid Background */
   &::before {
@@ -81,7 +87,7 @@ export const Label = styled.span`
 `;
 
 export const Headline = styled.h1`
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
   color: ${({ theme }) => theme.colors.text};
@@ -136,12 +142,16 @@ export const CTAButton = styled(Link)`
 
 export const RightColumn = styled.div`
   position: relative;
-  height: 500px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: ${fadeInUp} 0.8s ease-out 0.4s forwards;
   opacity: 0;
+
+  @media (min-width: 768px) {
+    height: 500px;
+  }
 
   @media (min-width: 1024px) {
     height: 600px;
@@ -200,12 +210,10 @@ export const BottomBarContainer = styled.div`
   padding: 40px 24px;
   position: relative;
   z-index: 10; /* Lower than ContentWrapper (20) */
+  margin-top: 40px;
   
   @media (min-width: 1024px) {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     max-width: 1440px; /* Container width */
     width: 100%;
     border-top-left-radius: 12px;
@@ -271,7 +279,8 @@ export const CapabilitiesText = styled.h3`
 
 export const FeaturesRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 32px;
 
   @media (min-width: 768px) {
