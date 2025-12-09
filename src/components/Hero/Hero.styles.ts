@@ -191,3 +191,114 @@ export const FloatingElement = styled.div<{ $top?: string; $left?: string; $righ
     100% { transform: translateY(0px); }
   }
 `;
+
+export const BottomBarContainer = styled.div`
+  width: 100%;
+  background-color: white;
+  padding: 40px 24px;
+  position: relative;
+  z-index: 10;
+  
+  @media (min-width: 1024px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+`;
+
+export const BottomBarContent = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
+export const CapabilitiesColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+`;
+
+export const CapabilitiesHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+export const CapabilitiesIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, #FFD700 0%, #FF4500 50%, #00FFFF 100%);
+`;
+
+export const CapabilitiesTitle = styled.span`
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+export const CapabilitiesText = styled.h3`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #141414;
+  line-height: 1.2;
+  margin: 0;
+
+  span {
+    color: #FF4500; /* Orange accent for the dash */
+  }
+`;
+
+export const FeaturesRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 60px;
+  }
+`;
+
+export const FeatureItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+`;
+
+export const FeatureIcon = styled.div`
+  color: #A855F7; /* Purple accent */
+  
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.orange { color: #FF4500; }
+  &.green { color: #00FF94; }
+`;
+
+export const FeatureTitle = styled.span`
+  font-weight: 700;
+  font-size: 1rem;
+  color: #141414;
+`;
+
+export const FeatureDescription = styled.span`
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+`;
