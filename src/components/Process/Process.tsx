@@ -14,40 +14,47 @@ import {
   StepTitle,
   StepDescription,
   StepLink,
-  Dot,
 } from './Process.styles';
 
 const Process = () => {
+  // Coordinates based on viewBox 0 0 1200 600
+  // Path: M0,600 Q150,600 300,450 T600,300 T900,150 T1200,0
+  // Points: (300, 450), (600, 300), (900, 150)
+
   const steps = [
     {
       number: '1',
       title: 'Marketing Strategy',
       description: 'We analysis your business & mark where to improve.',
       color: '#FFD700', // Yellow
-      top: '60%',
-      left: '15%',
+      // Position for HTML Card (percentages of 1200x600)
+      top: '75%', // 450/600
+      left: '25%', // 300/1200
       align: 'left',
-      dotPos: { top: '55%', left: '25%' }, // Adjusted for visual curve alignment
+      cx: 300,
+      cy: 450,
     },
     {
       number: '2',
       title: 'Social Media Marketing',
       description: 'We explore probable solutions to grow your social media.',
       color: '#FF4500', // Red
-      top: '40%',
-      left: '50%',
+      top: '50%', // 300/600
+      left: '50%', // 600/1200
       align: 'left',
-      dotPos: { top: '40%', left: '50%' },
+      cx: 600,
+      cy: 300,
     },
     {
       number: '3',
       title: 'Business Development',
       description: 'Our strategy, where we take your products to the customers.',
       color: '#00FFFF', // Cyan
-      top: '15%',
-      left: '85%',
+      top: '25%', // 150/600
+      left: '75%', // 900/1200
       align: 'left',
-      dotPos: { top: '15%', left: '75%' },
+      cx: 900,
+      cy: 150,
     },
   ];
 
@@ -64,30 +71,47 @@ const Process = () => {
           <WavyLineSVG viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none">
             {/* 
               Path Logic:
-              Start: Bottom Left (0, 500)
-              Curve up towards middle (600, 240) - passing through Step 2 dot
-              Curve up towards top right (1200, 90) - passing through Step 3 dot area
+              Start: Bottom Left (0, 600)
+              Q150,600 300,450 -> Curve to first point
+              T600,300 -> Smooth curve to second point
+              T900,150 -> Smooth curve to third point
+              T1200,0 -> Smooth curve to end
             */}
             <path
-              d="M-100,600 C200,600 300,330 600,240 S1000,90 1300,50"
+              d="M0,600 Q150,600 300,450 T600,300 T900,150 T1200,0"
               stroke="rgba(255, 255, 255, 0.2)"
               strokeWidth="2"
               fill="none"
             />
+
+            {/* Dots rendered inside SVG for perfect alignment */}
+            {steps.map((step, index) => (
+              <g key={`svg-dot-${index}`}>
+                {/* Outer Ring */}
+                <circle
+                  cx={step.cx}
+                  cy={step.cy}
+                  r="12"
+                  fill="#141414"
+                  stroke={step.color}
+                  strokeWidth="4"
+                />
+                {/* Inner Dot */}
+                <circle
+                  cx={step.cx}
+                  cy={step.cy}
+                  r="4"
+                  fill="white"
+                />
+              </g>
+            ))}
+
+            {/* End Dot (Optional, based on user feedback "kropek jest 4" - maybe they didn't want the 4th one? 
+                User said "kropek jest 4 i tylko jedna jest na lini". 
+                I will remove the 4th dot to be safe and stick to the 3 steps. 
+                If they want an end marker, I can add it, but 3 steps = 3 dots usually looks cleaner.
+            */}
           </WavyLineSVG>
-
-          {/* Dots on the line */}
-          {steps.map((step, index) => (
-            <Dot
-              key={`dot-${index}`}
-              $color={step.color}
-              $top={step.dotPos.top}
-              $left={step.dotPos.left}
-            />
-          ))}
-          {/* End Dot (Top Right) */}
-          <Dot $color="#00FFFF" $top="8%" $left="95%" />
-
 
           {steps.map((step, index) => (
             <StepCard

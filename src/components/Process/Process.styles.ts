@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 100px 24px;
-  background-color: #141414; /* Deep dark gray/black */
+  background-color: #141414;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  min-height: 800px; /* Ensure enough height for the rising wave */
+  min-height: 800px;
 
-  /* Geometric background accents (Cubes/Shapes) */
+  /* Geometric background accents */
   &::before {
     content: '';
     position: absolute;
@@ -40,7 +40,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: 1400px; /* Wider container for the panoramic feel */
+  max-width: 1400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,13 +79,13 @@ export const SectionTitle = styled.h2`
 export const StepsWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 600px; /* Fixed height for desktop layout */
+  height: 600px;
   display: flex;
   flex-direction: column;
   gap: 60px;
 
   @media (min-width: 1024px) {
-    display: block; /* Use absolute positioning for children */
+    display: block;
   }
 `;
 
@@ -98,6 +98,7 @@ export const WavyLineSVG = styled.svg`
   pointer-events: none;
   display: none;
   z-index: 0;
+  overflow: visible;
 
   @media (min-width: 1024px) {
     display: block;
@@ -117,9 +118,10 @@ export const StepCard = styled.div<{ $top?: string; $left?: string; $align?: 'le
     position: absolute;
     top: ${({ $top }) => $top || 'auto'};
     left: ${({ $left }) => $left || 'auto'};
-    transform: translateX(-50%); /* Center horizontally relative to left */
+    transform: translateX(-50%); /* Center horizontally only */
     text-align: ${({ $align }) => $align || 'left'};
     align-items: ${({ $align }) => ($align === 'center' ? 'center' : $align === 'right' ? 'flex-end' : 'flex-start')};
+    padding-top: 40px; /* Push content down below the dot */
   }
 `;
 
@@ -129,7 +131,7 @@ export const StepNumber = styled.div`
   color: white;
   line-height: 0.8;
   margin-bottom: 16px;
-  font-family: 'Arial Black', sans-serif; /* Ensure heavy weight */
+  font-family: 'Arial Black', sans-serif;
 `;
 
 export const StepTitle = styled.h3`
@@ -167,36 +169,5 @@ export const StepLink = styled.a<{ $color: string }>`
     content: '+';
     font-size: 1.2rem;
     color: ${({ $color }) => $color};
-  }
-`;
-
-export const Dot = styled.div<{ $color: string; $top: string; $left: string }>`
-  position: absolute;
-  top: ${({ $top }) => $top};
-  left: ${({ $left }) => $left};
-  width: 24px;
-  height: 24px;
-  background-color: #141414;
-  border: 4px solid ${({ $color }) => $color};
-  border-radius: 50%;
-  z-index: 2;
-  transform: translate(-50%, -50%); /* Center exactly on the point */
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: block;
-  }
-  
-  /* Inner dot */
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background-color: white;
-    border-radius: 50%;
   }
 `;
