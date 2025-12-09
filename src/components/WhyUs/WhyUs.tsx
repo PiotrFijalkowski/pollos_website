@@ -73,10 +73,10 @@ const WhyUs = () => {
 
         <ImageColumn>
           <Image
-            src="/assets/why.png"
+            src="/assets/why.svg"
             alt="Dlaczego my"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'contain' }}
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </ImageColumn>

@@ -108,23 +108,8 @@ export const ImageColumn = styled.div`
   position: relative;
   width: 100%;
   height: 400px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px -10px rgba(2, 12, 27, 0.7);
-
+  
   @media (min-width: 1024px) {
     height: 600px;
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(100, 255, 218, 0.1); /* Overlay tint */
-    z-index: 1;
-    pointer-events: none;
   }
 `;
