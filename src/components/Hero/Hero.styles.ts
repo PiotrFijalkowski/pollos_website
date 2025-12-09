@@ -23,7 +23,7 @@ export const HeroContainer = styled.section`
   background-color: #141414; /* Dark background */
   position: relative;
   overflow: hidden;
-  padding: 120px 24px 60px; /* Added top padding for fixed navbar */
+  padding: 0px 24px 60px; /* Added top padding for fixed navbar */
 
   /* Perspective Grid Background */
   &::before {
