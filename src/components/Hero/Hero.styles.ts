@@ -175,6 +175,33 @@ export const MainImageWrapper = styled.div`
   }
 `;
 
+export const SecondaryImageWrapper = styled.div`
+  position: absolute;
+  bottom: 0; /* Aligned to bottom of collage/container */
+  left: -50px; /* Shifted left */
+  width: 300px;
+  height: 350px;
+  z-index: 25; /* Above MainImage (20) and BottomBar (10) */
+  
+  /* Red/Orange background square */
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%);
+    z-index: -1;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 1024px) {
+    bottom: -40px; /* Overlap the bottom bar slightly */
+    left: -100px;
+  }
+`;
+
 export const FloatingElement = styled.div<{ $top?: string; $left?: string; $right?: string; $bottom?: string }>`
   position: absolute;
   top: ${({ $top }) => $top || 'auto'};

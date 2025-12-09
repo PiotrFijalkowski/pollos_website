@@ -13,6 +13,7 @@ import {
   RightColumn,
   CollageWrapper,
   MainImageWrapper,
+  SecondaryImageWrapper,
   FloatingElement,
   BottomBarContainer,
   BottomBarContent,
@@ -62,6 +63,21 @@ const Hero = () => {
                 priority
               />
             </MainImageWrapper>
+
+            <SecondaryImageWrapper>
+              {/* Placeholder for Woman Image */}
+              <Image
+                src="/assets/why.svg"
+                alt="Creative Director"
+                fill
+                style={{ objectFit: 'contain' }}
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              {/* Play Button Overlay */}
+              <div style={{ position: 'absolute', top: '30%', left: '-20px', width: 50, height: 50, background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </SecondaryImageWrapper>
 
             {/* Floating Social Icons / Elements */}
             <FloatingElement $top="20%" $left="0%">
