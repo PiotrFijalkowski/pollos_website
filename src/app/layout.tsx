@@ -24,7 +24,7 @@ import GlobalStyles from "@/styles/GlobalStyles";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
-import { ReactLenis } from '@studio-freight/react-lenis';
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 export default function RootLayout({
   children,
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
+      <SmoothScrolling>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <StyledComponentsRegistry>
             <ThemeContextProvider>
@@ -44,7 +44,7 @@ export default function RootLayout({
             </ThemeContextProvider>
           </StyledComponentsRegistry>
         </body>
-      </ReactLenis>
+      </SmoothScrolling>
     </html>
   );
 }
