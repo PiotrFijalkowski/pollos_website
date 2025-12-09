@@ -52,8 +52,10 @@ export const HeaderGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 60px;
+  margin-bottom: 0; /* Removed margin */
   max-width: 600px;
+  position: relative;
+  z-index: 2; /* Ensure title stays on top */
 `;
 
 export const Subtitle = styled.span`
@@ -83,9 +85,11 @@ export const StepsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
+  margin-top: -150px; /* Pull up by 150px */
 
   @media (min-width: 1024px) {
     display: block;
+    margin-top: -200px; /* Pull up more on desktop to match user request */
   }
 `;
 
