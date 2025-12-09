@@ -5,10 +5,10 @@ import Image from 'next/image';
 import {
   Section,
   Container,
-  ContentColumn,
   HeaderGroup,
   Subtitle,
   Title,
+  ContentWrapper,
   BenefitsList,
   BenefitItem,
   IconWrapper,
@@ -21,29 +21,33 @@ import {
 const WhyUs = () => {
   const benefits = [
     {
-      title: 'Doświadczenie',
-      description: 'Ponad 10 lat na rynku marketingu cyfrowego. Zrealizowaliśmy setki projektów dla klientów z różnych branż.',
+      title: 'Increase Sales',
+      description: 'Our marketing experts design digital campaigns that captivate and convert.',
+      iconColor: '#00FF94', // Green accent
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg fill="none" viewBox="0 0 24 24" stroke="#00FF94">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       ),
     },
     {
-      title: 'Indywidualne podejście',
-      description: 'Każdy biznes jest inny. Nie stosujemy szablonów – tworzymy strategie szyte na miarę Twoich potrzeb.',
+      title: 'Result Analysis',
+      description: 'Platform-specific, highly shareable, innovative, strategy-informed content.',
+      iconColor: '#A855F7', // Purple accent
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        <svg fill="none" viewBox="0 0 24 24" stroke="#A855F7">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
         </svg>
       ),
     },
     {
-      title: 'Mierzalne wyniki',
-      description: 'Opieramy się na danych. Dostarczamy raporty, które jasno pokazują zwrot z inwestycji (ROI).',
+      title: 'Product Development',
+      description: "If you put money behind a stone, it's still a stone. We make diamonds.",
+      iconColor: '#3B82F6', // Blue accent
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+        <svg fill="none" viewBox="0 0 24 24" stroke="#3B82F6">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
         </svg>
       ),
     },
@@ -52,16 +56,18 @@ const WhyUs = () => {
   return (
     <Section id="why-us">
       <Container>
-        <ContentColumn>
-          <HeaderGroup>
-            <Subtitle>Dlaczego my?</Subtitle>
-            <Title>Partner, któremu możesz zaufać</Title>
-          </HeaderGroup>
+        <HeaderGroup>
+          <Subtitle>WHY CHOOSE US</Subtitle>
+          <Title>Why Pollos !</Title>
+        </HeaderGroup>
 
+        <ContentWrapper>
           <BenefitsList>
             {benefits.map((benefit, index) => (
               <BenefitItem key={index}>
-                <IconWrapper>{benefit.icon}</IconWrapper>
+                <IconWrapper>
+                  {benefit.icon}
+                </IconWrapper>
                 <BenefitContent>
                   <BenefitTitle>{benefit.title}</BenefitTitle>
                   <BenefitDescription>{benefit.description}</BenefitDescription>
@@ -69,17 +75,17 @@ const WhyUs = () => {
               </BenefitItem>
             ))}
           </BenefitsList>
-        </ContentColumn>
 
-        <ImageColumn>
-          <Image
-            src="/assets/why.svg"
-            alt="Dlaczego my"
-            fill
-            style={{ objectFit: 'contain' }}
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </ImageColumn>
+          <ImageColumn>
+            <Image
+              src="/assets/why.svg"
+              alt="Why Choose Us"
+              fill
+              style={{ objectFit: 'contain' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </ImageColumn>
+        </ContentWrapper>
       </Container>
     </Section>
   );
