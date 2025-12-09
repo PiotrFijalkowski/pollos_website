@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 
 import StyledComponentsRegistry from "@/lib/registry";
 
+import Navbar from "@/components/Navbar/Navbar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Navbar />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
