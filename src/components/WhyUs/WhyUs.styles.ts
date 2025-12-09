@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 100px 24px;
-  background-color: #141414; /* Dark background */
+  background-color: #0a0a0a; /* Slightly darker than Services (#141414) */
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separator line */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -12,8 +13,8 @@ export const Section = styled.section`
 
   /* Grid Background Effect */
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
 `;
 
