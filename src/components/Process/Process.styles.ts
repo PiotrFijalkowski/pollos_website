@@ -81,15 +81,16 @@ export const SectionTitle = styled.h2`
 export const StepsWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 600px;
+  height: auto; /* Auto height for mobile stack */
   display: flex;
   flex-direction: column;
   gap: 60px;
-  margin-top: -150px; /* Pull up by 150px */
+  margin-top: 0; /* Reset for mobile */
 
   @media (min-width: 1024px) {
     display: block;
-    margin-top: -200px; /* Pull up more on desktop to match user request */
+    height: 600px; /* Fixed height for desktop wave */
+    margin-top: -200px; /* Pull up only on desktop */
   }
 `;
 
