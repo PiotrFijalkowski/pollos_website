@@ -24,8 +24,8 @@ const Process = () => {
   const steps = [
     {
       number: '1',
-      title: 'Marketing Strategy',
-      description: 'We analysis your business & mark where to improve.',
+      title: 'Rozpoznanie & Strategia',
+      description: 'Luźna rozmowa, szybki audyt i wyłapanie, co trzeba poprawić. Ustalamy kierunek, styl komunikacji, pomysły na rolki i plan działań, żeby social media w końcu miały sens i spójność.',
       color: '#FFD700', // Yellow
       // Position for HTML Card (percentages of 1200x600)
       top: '75%', // 450/600
@@ -36,8 +36,8 @@ const Process = () => {
     },
     {
       number: '2',
-      title: 'Social Media Marketing',
-      description: 'We explore probable solutions to grow your social media.',
+      title: 'Produkcja — foto, wideo, content',
+      description: 'Wpadamy z kamerą i aparatem. Robimy zdjęcia, nagrywamy rolki, montujemy materiały i przygotowujemy cały content, który faktycznie przyciąga uwagę i buduje markę.',
       color: '#FF4500', // Red
       top: '50%', // 300/600
       left: '50%', // 600/1200
@@ -47,8 +47,8 @@ const Process = () => {
     },
     {
       number: '3',
-      title: 'Business Development',
-      description: 'Our strategy, where we take your products to the customers.',
+      title: 'Prowadzenie & Reklamy',
+      description: 'Przejmujemy Twoje social media. Publikujemy, ustawiamy kampanie, prowadzimy profile i na bieżąco optymalizujemy, tak aby zasięgi rosły, a klienci naprawdę zaczęli przychodzić.',
       color: '#00FFFF', // Cyan
       top: '25%', // 150/600
       left: '75%', // 900/1200
