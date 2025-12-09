@@ -4,9 +4,12 @@ import React, { useState } from 'react';
 import {
   Section,
   Container,
+  LeftColumn,
+  RightColumn,
   Header,
   Label,
   Title,
+  Description,
   AccordionItem,
   QuestionButton,
   QuestionText,
@@ -44,25 +47,32 @@ const FAQ = () => {
   return (
     <Section>
       <Container>
-        <Header>
-          <Label>FAQ</Label>
-          <Title>Najczęściej zadawane pytania</Title>
-        </Header>
+        <LeftColumn>
+          <Header>
+            <Label>FAQ</Label>
+            <Title>Najczęściej zadawane pytania</Title>
+            <Description>
+              Masz pytania? Tutaj znajdziesz odpowiedzi na najczęściej pojawiające się wątpliwości dotyczące naszej współpracy, procesów i usług.
+            </Description>
+          </Header>
+        </LeftColumn>
 
-        {faqData.map((item, index) => (
-          <AccordionItem key={index}>
-            <QuestionButton
-              $isOpen={openIndex === index}
-              onClick={() => toggleAccordion(index)}
-            >
-              <QuestionText>{item.question}</QuestionText>
-              <IconWrapper $isOpen={openIndex === index} />
-            </QuestionButton>
-            <AnswerWrapper $isOpen={openIndex === index}>
-              <AnswerText>{item.answer}</AnswerText>
-            </AnswerWrapper>
-          </AccordionItem>
-        ))}
+        <RightColumn>
+          {faqData.map((item, index) => (
+            <AccordionItem key={index}>
+              <QuestionButton
+                $isOpen={openIndex === index}
+                onClick={() => toggleAccordion(index)}
+              >
+                <QuestionText>{item.question}</QuestionText>
+                <IconWrapper $isOpen={openIndex === index} />
+              </QuestionButton>
+              <AnswerWrapper $isOpen={openIndex === index}>
+                <AnswerText>{item.answer}</AnswerText>
+              </AnswerWrapper>
+            </AccordionItem>
+          ))}
+        </RightColumn>
       </Container>
     </Section>
   );

@@ -8,10 +8,11 @@ const fadeIn = keyframes`
 `;
 
 export const Section = styled.section`
-  background-color: #141414;
+  background-color: #0a0a0a; /* Slightly darker for separation */
   padding: 100px 24px;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Visual separator */
 
   /* Grid Background Pattern */
   &::before {
@@ -31,16 +32,41 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1.5fr; /* Left column smaller than right */
+    align-items: start;
+  }
+`;
+
+export const LeftColumn = styled.div`
+  position: sticky;
+  top: 100px; /* Sticky effect on desktop */
+`;
+
+export const RightColumn = styled.div`
+  width: 100%;
 `;
 
 export const Header = styled.div`
-  text-align: center;
-  margin-bottom: 60px;
+  text-align: left;
+  margin-bottom: 0;
   animation: ${fadeIn} 0.6s ease-out forwards;
+`;
+
+export const Description = styled.p`
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 24px;
+  max-width: 400px;
 `;
 
 export const Label = styled.span`
