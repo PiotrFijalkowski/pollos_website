@@ -27,8 +27,8 @@ const Process = () => {
       title: 'Rozpoznanie & Strategia',
       description: 'Luźna rozmowa, szybki audyt i wyłapanie, co trzeba poprawić. Ustalamy kierunek, styl komunikacji, pomysły na rolki i plan działań, żeby social media w końcu miały sens i spójność.',
       color: '#FFD700', // Yellow
-      // Position for HTML Card (percentages of 1200x600)
-      top: '75%', // 450/600
+      // Position for HTML Card (percentages of 1200x850)
+      top: '53%', // 450/850
       left: '25%', // 300/1200
       align: 'left',
       cx: 300,
@@ -39,7 +39,7 @@ const Process = () => {
       title: 'Produkcja — foto, wideo, content',
       description: 'Wpadamy z kamerą i aparatem. Robimy zdjęcia, nagrywamy rolki, montujemy materiały i przygotowujemy cały content, który faktycznie przyciąga uwagę i buduje markę.',
       color: '#FF4500', // Red
-      top: '50%', // 300/600
+      top: '35%', // 300/850
       left: '50%', // 600/1200
       align: 'left',
       cx: 600,
@@ -50,7 +50,7 @@ const Process = () => {
       title: 'Prowadzenie & Reklamy',
       description: 'Przejmujemy Twoje social media. Publikujemy, ustawiamy kampanie, prowadzimy profile i na bieżąco optymalizujemy, tak aby zasięgi rosły, a klienci naprawdę zaczęli przychodzić.',
       color: '#00FFFF', // Cyan
-      top: '25%', // 150/600
+      top: '17.6%', // 150/850
       left: '75%', // 900/1200
       align: 'left',
       cx: 900,
@@ -68,7 +68,7 @@ const Process = () => {
 
         <StepsWrapper>
           {/* SVG Wavy Line - Rising from Bottom-Left to Top-Right */}
-          <WavyLineSVG viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none">
+          <WavyLineSVG viewBox="0 0 1200 850" fill="none" preserveAspectRatio="none">
             {/* 
               Path Logic:
               Start: Bottom Left (0, 600)

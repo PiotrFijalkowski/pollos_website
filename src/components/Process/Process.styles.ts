@@ -89,7 +89,7 @@ export const StepsWrapper = styled.div`
 
   @media (min-width: 1024px) {
     display: block;
-    height: 600px; /* Fixed height for desktop wave */
+    height: 850px; /* Fixed height for desktop wave */
     margin-top: -200px; /* Pull up only on desktop */
   }
 `;
