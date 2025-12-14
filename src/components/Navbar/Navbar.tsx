@@ -10,7 +10,10 @@ import {
   LogoContainer,
   RightSection,
   DesktopMenu,
+  NavItem,
   NavLink,
+  DropdownMenu,
+  DropdownLink,
   CTAButton,
   HamburgerButton,
   MobileMenuOverlay,
@@ -57,15 +60,32 @@ const Navbar = () => {
 
           <RightSection>
             <DesktopMenu>
-              <NavLink href="/">Strona Główna</NavLink>
-              <NavLink href="/about">O Nas</NavLink>
-              <NavLink href="/contact">Kontakt</NavLink>
+              <NavItem>
+                <NavLink href="/uslugi">Usługi</NavLink>
+                <DropdownMenu>
+                  <DropdownLink href="/uslugi/social-media">Social Media</DropdownLink>
+                  <DropdownLink href="/uslugi/kampanie-reklamowe">Kampanie Reklamowe</DropdownLink>
+                  <DropdownLink href="/uslugi/zdjecia-i-filmy">Zdjęcia i Filmy</DropdownLink>
+                  <DropdownLink href="/uslugi/strony-internetowe">Strony WWW</DropdownLink>
+                  <DropdownLink href="/uslugi/pakiety">Pakiety</DropdownLink>
+                </DropdownMenu>
+              </NavItem>
+              <NavLink href="/realizacje">Realizacje</NavLink>
+              <NavLink href="/dla-kogo">Dla kogo</NavLink>
+              <NavLink href="/wiedza">Wiedza</NavLink>
+              <NavLink href="/o-firmie">O Firmie</NavLink>
+              <NavLink href="/faq">FAQ</NavLink>
+              <NavLink href="/kontakt">Kontakt</NavLink>
             </DesktopMenu>
-            <ThemeToggle color="white" />
-            <CTAButton href="/contact">Darmowa Wycena</CTAButton>
+            <ThemeToggle color={scrolled || isOpen ? theme?.colors?.text : theme?.colors?.navText} />
+            <CTAButton href="/kontakt">Darmowa Wycena</CTAButton>
           </RightSection>
 
-          <HamburgerButton onClick={toggleMenu} aria-label="Menu">
+          <HamburgerButton
+            onClick={toggleMenu}
+            aria-label="Menu"
+            $color={scrolled ? theme?.colors?.text : theme?.colors?.navText}
+          >
             <div style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0)' }} />
             <div style={{ opacity: isOpen ? 0 : 1, transform: isOpen ? 'translateX(20px)' : 'translateX(0)' }} />
             <div style={{ transform: isOpen ? 'rotate(-45deg)' : 'rotate(0)' }} />
@@ -85,15 +105,19 @@ const Navbar = () => {
           <div style={{ transform: 'rotate(-45deg)' }} />
         </HamburgerButton>
 
-        <MobileNavLink href="/" onClick={toggleMenu}>Strona Główna</MobileNavLink>
-        <MobileNavLink href="/about" onClick={toggleMenu}>O Nas</MobileNavLink>
-        <MobileNavLink href="/contact" onClick={toggleMenu}>Kontakt</MobileNavLink>
+        <MobileNavLink href="/uslugi" onClick={toggleMenu}>Usługi</MobileNavLink>
+        <MobileNavLink href="/realizacje" onClick={toggleMenu}>Realizacje</MobileNavLink>
+        <MobileNavLink href="/dla-kogo" onClick={toggleMenu}>Dla kogo</MobileNavLink>
+        <MobileNavLink href="/wiedza" onClick={toggleMenu}>Wiedza</MobileNavLink>
+        <MobileNavLink href="/o-firmie" onClick={toggleMenu}>O Firmie</MobileNavLink>
+        <MobileNavLink href="/faq" onClick={toggleMenu}>FAQ</MobileNavLink>
+        <MobileNavLink href="/kontakt" onClick={toggleMenu}>Kontakt</MobileNavLink>
 
         <div style={{ margin: '20px 0' }}>
           <ThemeToggle />
         </div>
 
-        <CTAButton href="/contact" onClick={toggleMenu}>Darmowa Wycena</CTAButton>
+        <CTAButton href="/kontakt" onClick={toggleMenu} style={{ display: 'inline-block' }}>Darmowa Wycena</CTAButton>
       </MobileMenuOverlay>
     </>
   );

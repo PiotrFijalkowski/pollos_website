@@ -129,7 +129,7 @@ const WhyUs = () => {
 
           <ImageColumn>
             <Image
-              src="/assets/why.svg"
+              src="/assets/why.png"
               alt="Why Choose Us"
               fill
               style={{ objectFit: 'contain' }}

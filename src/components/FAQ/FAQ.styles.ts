@@ -11,7 +11,7 @@ export const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.background}; /* Slightly darker for separation */
   padding: 100px 24px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; Removed to allow sticky positioning */
   border-top: 1px solid ${({ theme }) => theme.colors.border}; /* Visual separator */
 
   /* Grid Background Pattern */
