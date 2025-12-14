@@ -46,7 +46,20 @@ export const ServicesGrid = styled.div`
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+
+    /* First 3 items span 2 columns (1/3 width) */
+    & > *:nth-child(1),
+    & > *:nth-child(2),
+    & > *:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    /* Last 2 items span 3 columns (1/2 width) */
+    & > *:nth-child(4),
+    & > *:nth-child(5) {
+      grid-column: span 3;
+    }
   }
 `;
 

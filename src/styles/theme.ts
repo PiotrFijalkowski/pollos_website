@@ -23,7 +23,7 @@ export const darkTheme = {
     border: 'rgba(255, 255, 255, 0.05)',
     grid: 'rgba(255, 255, 255, 0.03)',
     heroOverlay: 'rgba(0, 0, 0, 0.7)',
-    navBackground: '#193454', // Keeping the original dark nav color or adapting to dark theme
+    navBackground: '#141414',
     navText: '#ffffff',
   },
 };

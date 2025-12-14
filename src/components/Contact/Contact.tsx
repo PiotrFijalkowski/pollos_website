@@ -16,6 +16,7 @@ import {
   ContactLabel,
   ContactValue,
   FormColumn,
+  FormTagline,
   Form,
   FormGroup,
   InputLabel,
@@ -55,6 +56,7 @@ const Contact = () => {
     <Section id="contact">
       <Container>
         <FormColumn>
+          <FormTagline>Bezpłatna konsultacja • Odpowiadamy zazwyczaj w ciągu 24h</FormTagline>
           <Form onSubmit={handleSubmit}>
             <FormGroup>
               <InputLabel>Imię i Nazwisko</InputLabel>
@@ -84,7 +86,7 @@ const Contact = () => {
               <InputLabel>Wiadomość</InputLabel>
               <TextArea
                 name="message"
-                placeholder="Opisz swój projekt..."
+                placeholder="Tu wpisz wiadomość..."
                 value={formData.message}
                 onChange={handleChange}
                 required
@@ -100,10 +102,10 @@ const Contact = () => {
         <InfoColumn>
           <Header>
             <Label>KONTAKT</Label>
-            <Title>Rozpocznijmy współpracę</Title>
+            <Title>Porozmawiajmy<br /> o Twojej marce</Title>
             <Description>
-              Masz pomysł na projekt? Chcesz porozmawiać o strategii?
-              Napisz do nas lub zadzwoń. Jesteśmy tutaj, aby pomóc Twojemu biznesowi rosnąć.
+              Masz pomysł, problem lub po prostu chcesz sprawdzić, czy możemy pomóc?
+              Zostaw kontakt — wrócimy z konkretną propozycją, bez lania wody.
             </Description>
           </Header>
 
@@ -141,7 +143,7 @@ const Contact = () => {
               </IconWrapper>
               <ContactText>
                 <ContactLabel>Biuro</ContactLabel>
-                <ContactValue href="#">Warszawa, Polska</ContactValue>
+                <ContactValue href="#">Białystok, Polska</ContactValue>
               </ContactText>
             </ContactItem>
           </ContactDetails>

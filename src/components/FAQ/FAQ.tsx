@@ -20,20 +20,20 @@ import {
 
 const faqData = [
   {
-    question: 'Jak wygląda proces współpracy?',
-    answer: 'Zaczynamy od bezpłatnej konsultacji, aby zrozumieć Twoje potrzeby. Następnie przygotowujemy strategię i harmonogram działań. Po akceptacji przechodzimy do realizacji, regularnie raportując postępy.',
+    question: 'Jak wygląda start współpracy?',
+    answer: 'Zaczynamy od bezpłatnej konsultacji i krótkiego rozpoznania potrzeb. Na tej podstawie proponujemy zakres działań i dalsze kroki.',
   },
   {
-    question: 'Czy oferujecie wsparcie po zakończeniu projektu?',
-    answer: 'Tak, oferujemy pakiety utrzymaniowe i rozwojowe. Twój sukces jest dla nas priorytetem, dlatego dbamy o to, aby Twoje rozwiązania były zawsze aktualne i bezpieczne.',
+    question: 'Czy mogę wybrać tylko jedną usługę?',
+    answer: 'Tak. Możesz skorzystać z pojedynczych usług lub połączyć je w spójną strategię dopasowaną do Twojej marki.',
   },
   {
-    question: 'Jakie są koszty usług?',
-    answer: 'Każdy projekt wyceniamy indywidualnie, biorąc pod uwagę jego zakres i stopień skomplikowania. Skontaktuj się z nami, aby otrzymać darmową wycenę.',
+    question: 'Jak szybko widać efekty działań?',
+    answer: 'Pierwsze efekty są widoczne już po kilku tygodniach. Długofalowe rezultaty wymagają regularnych i konsekwentnych działań.',
   },
   {
-    question: 'Ile czasu trwa realizacja projektu?',
-    answer: 'Czas realizacji zależy od skali projektu. Proste strony wizytówki to zazwyczaj 2-3 tygodnie, natomiast rozbudowane serwisy i aplikacje mogą zająć od 1 do 3 miesięcy.',
+    question: 'Czy współpraca jest długoterminowa?',
+    answer: 'Współpracujemy elastycznie. Możesz działać z nami projektowo lub długoterminowo – w zależności od potrzeb.',
   },
 ];
 

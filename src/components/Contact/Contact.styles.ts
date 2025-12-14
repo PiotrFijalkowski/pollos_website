@@ -149,6 +149,16 @@ export const FormColumn = styled.div`
   opacity: 0;
 `;
 
+export const FormTagline = styled.p`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.accent};
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  display: block;
+`;
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

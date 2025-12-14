@@ -6,6 +6,13 @@ import FAQ from "@/components/FAQ/FAQ";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pollos - Agencja Marketingowa | Social Media, Foto, Wideo",
+  description: "Zwiększ widoczność swojego biznesu z Pollos. Oferujemy prowadzenie social media, profesjonalne sesje, strony internetowe i skuteczne reklamy w Białymstoku i online.",
+};
+
 export default function Home() {
   return (
     <main>

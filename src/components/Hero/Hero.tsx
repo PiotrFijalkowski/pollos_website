@@ -40,7 +40,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            DIGITAL
+            DIGITAL MARKETING
           </Label>
           <Headline
             as={motion.h1}
@@ -48,7 +48,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Marketing<br />Agency
+            Digital Growth Agency
           </Headline>
           <Subheadline
             as={motion.p}
@@ -131,7 +131,7 @@ const Hero = () => {
               <CapabilitiesTitle>CAPABILITIES</CapabilitiesTitle>
             </CapabilitiesHeader>
             <CapabilitiesText>
-              Creating customer relationships that last forever <span>—</span>
+              Pomagamy markom rosnąć online<span>—</span>
             </CapabilitiesText>
           </CapabilitiesColumn>
 
@@ -142,8 +142,8 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </FeatureIcon>
-              <FeatureTitle>Reporting</FeatureTitle>
-              <FeatureDescription>& analytics</FeatureDescription>
+              <FeatureTitle>Strategia</FeatureTitle>
+              <FeatureDescription>Kierunek</FeatureDescription>
             </FeatureItem>
 
             <FeatureItem>
@@ -152,8 +152,8 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                 </svg>
               </FeatureIcon>
-              <FeatureTitle>More</FeatureTitle>
-              <FeatureDescription>in context</FeatureDescription>
+              <FeatureTitle>CONTENT</FeatureTitle>
+              <FeatureDescription>Zaangażowanie</FeatureDescription>
             </FeatureItem>
 
             <FeatureItem>
@@ -162,8 +162,8 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </FeatureIcon>
-              <FeatureTitle>Better</FeatureTitle>
-              <FeatureDescription>accuracy</FeatureDescription>
+              <FeatureTitle>OPTYMALIZACJA</FeatureTitle>
+              <FeatureDescription>Efektywność</FeatureDescription>
             </FeatureItem>
           </FeaturesRow>
         </BottomBarContent>
