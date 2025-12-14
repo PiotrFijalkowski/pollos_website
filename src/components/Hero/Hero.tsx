@@ -85,7 +85,7 @@ const Hero = () => {
             <MainImageWrapper>
               {/* Using why.svg as placeholder since generation failed */}
               <Image
-                src="/assets/why.svg"
+                src="/assets/hero.png"
                 alt="Marketing Expert Placeholder"
                 fill
                 style={{ objectFit: 'contain' }}
