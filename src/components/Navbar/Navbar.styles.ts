@@ -40,6 +40,13 @@ export const RightSection = styled.div`
   gap: 24px;
 `;
 
+export const DesktopThemeToggle = styled.div`
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
+`;
+
 export const DesktopMenu = styled.div`
   display: none;
   align-items: center;

@@ -9,6 +9,7 @@ import {
   NavContent,
   LogoContainer,
   RightSection,
+  DesktopThemeToggle,
   DesktopMenu,
   NavItem,
   NavLink,
@@ -77,8 +78,10 @@ const Navbar = () => {
               <NavLink href="/faq">FAQ</NavLink>
               <NavLink href="/kontakt">Kontakt</NavLink>
             </DesktopMenu>
-            <ThemeToggle color={scrolled || isOpen ? theme?.colors?.text : theme?.colors?.navText} />
-            <CTAButton href="/kontakt">Darmowa Wycena</CTAButton>
+            <DesktopThemeToggle>
+              <ThemeToggle color={scrolled || isOpen ? theme?.colors?.text : theme?.colors?.navText} />
+            </DesktopThemeToggle>
+            <CTAButton href="/kontakt">Darmowa Konsultacja</CTAButton>
           </RightSection>
 
           <HamburgerButton
@@ -117,7 +120,7 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
 
-        <CTAButton href="/kontakt" onClick={toggleMenu} style={{ display: 'inline-block' }}>Darmowa Wycena</CTAButton>
+        <CTAButton href="/kontakt" onClick={toggleMenu} style={{ display: 'inline-block' }}>Darmowa Konsultacja</CTAButton>
       </MobileMenuOverlay>
     </>
   );

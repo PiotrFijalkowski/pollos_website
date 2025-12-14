@@ -178,44 +178,50 @@ export const InputLabel = styled.label`
 `;
 
 export const Input = styled.input`
-  background: transparent;
+  background: ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.03)' : 'transparent'};
   border: none;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 12px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.2)' : theme.colors.border};
+  padding: 16px 12px;
   color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
-  transition: border-color 0.2s ease;
+  transition: all 0.3s ease;
   width: 100%;
 
   &:focus {
     outline: none;
-    border-bottom-color: ${({ theme }) => theme.colors.accent};
+    background: ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.05)' : 'transparent'};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+    padding-left: 20px; /* Enhanced slide effect */
   }
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.textSecondary};
+    opacity: 0.7;
   }
 `;
 
 export const TextArea = styled.textarea`
-  background: transparent;
+  background: ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.03)' : 'transparent'};
   border: none;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 12px 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.2)' : theme.colors.border};
+  padding: 16px 12px;
   color: ${({ theme }) => theme.colors.text};
   font-size: 1rem;
-  transition: border-color 0.2s ease;
+  transition: all 0.3s ease;
   width: 100%;
   resize: vertical;
   min-height: 100px;
 
   &:focus {
     outline: none;
-    border-bottom-color: ${({ theme }) => theme.colors.accent};
+    background: ${({ theme }) => theme.colors.background === '#0a0a0a' ? 'rgba(255, 255, 255, 0.05)' : 'transparent'};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.accent};
+    padding-left: 20px;
   }
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.textSecondary};
+    opacity: 0.7;
   }
 `;
 
