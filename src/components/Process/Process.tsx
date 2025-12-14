@@ -133,8 +133,8 @@ const Process = () => {
               <StepNumber>{step.number}</StepNumber>
               <StepTitle>{step.title}</StepTitle>
               <StepDescription>{step.description}</StepDescription>
-              <StepLink href="/contact" $color={step.color}>
-                Learn more
+              <StepLink href="/kontakt" $color={step.color}>
+                Dowiedz sie więcej
               </StepLink>
             </StepCard>
           ))}

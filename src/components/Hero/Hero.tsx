@@ -60,7 +60,7 @@ const Hero = () => {
             Strategia, kreatywność i technologia w jednym miejscu.
           </Subheadline>
           <CTAButton
-            href="/contact"
+            href="/kontakt"
             as={motion.a}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get a Demo
+            Darmowa Konsultacja
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

@@ -123,7 +123,7 @@ const ServicesPage = () => {
           Jesteśmy otwarci na wyzwania. Skontaktuj się z nami, aby omówić szczegóły Twojego pomysłu.
         </CTADescription>
         <CTAButton
-          href="/contact"
+          href="/kontakt"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

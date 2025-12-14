@@ -36,7 +36,7 @@ const Footer = () => {
             <ColumnTitle>Menu</ColumnTitle>
             <LinkItem href="/">Strona Główna</LinkItem>
             <LinkItem href="/about">O Nas</LinkItem>
-            <LinkItem href="/contact">Kontakt</LinkItem>
+            <LinkItem href="/kontakt">Kontakt</LinkItem>
           </LinksColumn>
 
           <LinksColumn>
@@ -49,7 +49,7 @@ const Footer = () => {
           <LinksColumn>
             <ColumnTitle>Contact</ColumnTitle>
             <LinkItem href="mailto:hello@pollos.com">hello@pollos.com</LinkItem>
-            <LinkItem href="tel:+48123456789">+48 123 456 789</LinkItem>
+            <LinkItem href="tel:+48572047036">+48 572 047 036</LinkItem>
             <LinkItem href="#">Warsaw, Poland</LinkItem>
           </LinksColumn>
         </TopSection>

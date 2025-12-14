@@ -116,7 +116,7 @@ const Contact = () => {
               </IconWrapper>
               <ContactText>
                 <ContactLabel>Email</ContactLabel>
-                <ContactValue href="mailto:hello@pollos.agency">hello@pollos.agency</ContactValue>
+                <ContactValue href="mailto:kontakt@pollos.pl">kontakt@pollos.pl</ContactValue>
               </ContactText>
             </ContactItem>
 
@@ -128,7 +128,7 @@ const Contact = () => {
               </IconWrapper>
               <ContactText>
                 <ContactLabel>Telefon</ContactLabel>
-                <ContactValue href="tel:+48123456789">+48 123 456 789</ContactValue>
+                <ContactValue href="tel:+48572047036">+48 572 047 036</ContactValue>
               </ContactText>
             </ContactItem>
 
