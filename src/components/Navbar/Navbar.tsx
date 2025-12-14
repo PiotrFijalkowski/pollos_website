@@ -44,17 +44,22 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const getLogoSrc = () => {
+    if (!theme?.colors?.background) return '/assets/logo_b.png'; // Default
+    return theme.colors.background === '#0a0a0a' ? '/assets/logo_w.png' : '/assets/logo_b.png';
+  };
+
   return (
     <>
       <NavContainer $scrolled={scrolled}>
         <NavContent>
           <LogoContainer href="/">
             <Image
-              src="/assets/logo.png"
+              src={getLogoSrc()}
               alt="Pollos Logo"
-              width={120}
-              height={40}
-              style={{ width: 'auto', height: '40px' }}
+              width={180}
+              height={60}
+              style={{ width: 'auto', height: '60px' }}
               priority
             />
           </LogoContainer>
