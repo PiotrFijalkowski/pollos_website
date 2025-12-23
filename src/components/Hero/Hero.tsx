@@ -162,7 +162,7 @@ const Hero = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </FeatureIcon>
-              <FeatureTitle>OPTYMALIZACJA</FeatureTitle>
+              <FeatureTitle>WYNIKI</FeatureTitle>
               <FeatureDescription>Efektywność</FeatureDescription>
             </FeatureItem>
           </FeaturesRow>

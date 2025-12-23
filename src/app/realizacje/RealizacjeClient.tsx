@@ -23,6 +23,7 @@ import {
   LightboxImage,
   CloseButton
 } from './gallery.styles';
+import MapSection from '@/components/MapSection/MapSection';
 
 // Mock Data
 interface Project {
@@ -234,6 +235,8 @@ export default function RealizacjeClient() {
           </LightboxOverlay>
         )}
       </AnimatePresence>
+
+      <MapSection />
     </SubpageContainer>
   );
 }

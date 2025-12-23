@@ -64,7 +64,7 @@ export const Title = styled.h2`
 export const Description = styled.p`
   font-size: 1.125rem;
   line-height: 1.6;
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.textSecondary};
   margin-bottom: 32px;
   max-width: 500px;
 
@@ -91,6 +91,6 @@ export const TooltipTitle = styled.h4`
 
 export const TooltipText = styled.p`
   font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.4;
 `;

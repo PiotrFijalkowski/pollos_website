@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import {
   SubpageContainer,
   SubpageHero,
@@ -34,9 +35,14 @@ export default function SocialMediaClient() {
         "Regularne publikacje dopasowane do charakteru i stylu Twojej marki"
       ],
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src="/assets/social_pro.png"
+            alt="Prowadzenie profili social media"
+            fill
+            style={{ objectFit: 'contain', borderRadius: '20px', padding: '16px' }}
+          />
+        </div>
       )
     },
     {
@@ -49,9 +55,14 @@ export default function SocialMediaClient() {
         "Dobór formatów: zdjęcia, filmy, rolki, stories"
       ],
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-        </svg>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src="/assets/strategia.png"
+            alt="Strategia contentowa"
+            fill
+            style={{ objectFit: 'contain', borderRadius: '20px', padding: '16px' }}
+          />
+        </div>
       )
     },
     {
@@ -64,9 +75,14 @@ export default function SocialMediaClient() {
         "Budowanie pozytywnego wizerunku i zaangażowanej społeczności"
       ],
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src="/assets/publish.png"
+            alt="Publikacje i moderacja"
+            fill
+            style={{ objectFit: 'contain', borderRadius: '20px', padding: '16px' }}
+          />
+        </div>
       )
     },
     {
@@ -79,9 +95,14 @@ export default function SocialMediaClient() {
         "Rekomendacje optymalizacji strategii i publikacji"
       ],
       icon: (
-        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src="/assets/why.png"
+            alt="Analiza wyników"
+            fill
+            style={{ objectFit: 'contain', borderRadius: '20px', padding: '16px' }}
+          />
+        </div>
       )
     }
   ];
