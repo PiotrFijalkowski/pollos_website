@@ -37,12 +37,31 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('message', formData.message);
 
-    alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      const response = await fetch('/mail.php', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert(result.message || 'Wystąpił błąd podczas wysyłania wiadomości.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Wystąpił błąd połączenia. Spróbuj ponownie później.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

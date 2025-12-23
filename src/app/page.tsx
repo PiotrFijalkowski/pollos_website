@@ -5,6 +5,7 @@ import Process from "@/components/Process/Process";
 import FAQ from "@/components/FAQ/FAQ";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Contact from "@/components/Contact/Contact";
+import MapSection from "@/components/MapSection/MapSection";
 
 import { Metadata } from "next";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Process />
       <FAQ />
       <Testimonials />
+      <MapSection />
       <Contact />
     </main>
   );

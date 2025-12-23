@@ -10,10 +10,15 @@
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
+    "@types/d3-scale": "^4.0.9",
+    "@types/react-simple-maps": "^3.0.6",
+    "d3-scale": "^4.0.2",
     "framer-motion": "^12.23.25",
     "next": "16.0.8",
     "react": "19.2.1",
     "react-dom": "19.2.1",
+    "react-simple-maps": "^3.0.0",
+    "react-tooltip": "^5.30.0",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

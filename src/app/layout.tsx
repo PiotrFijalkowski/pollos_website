@@ -35,6 +35,7 @@ import GlobalStyles from "@/styles/GlobalStyles";
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
 
 import SmoothScrolling from "@/components/SmoothScrolling";
 
@@ -53,6 +54,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
+              <CookieBanner />
             </ThemeContextProvider>
           </StyledComponentsRegistry>
         </body>

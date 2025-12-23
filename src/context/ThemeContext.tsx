@@ -31,6 +31,11 @@ export const ThemeContextProvider = ({ children }: { children: React.ReactNode }
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    // Set data-theme attribute on html element for CSS selectors
+    document.documentElement.setAttribute('data-theme', themeMode);
+  }, [themeMode]);
+
   const toggleTheme = () => {
     const newTheme = themeMode === 'light' ? 'dark' : 'light';
     setThemeMode(newTheme);
